@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<style>
+    .col-md-6{
+        margin-top: 3%;
+
+    }
+
+</style>
+
+<div class="offwrap"></div>
+<div class="main-content">
+    <div class="full-width-header">
+        <header id="rs-header" class="rs-header home3-header-style1">
+            {% include "topbar.html" %}
+            {% include 'menu.html' %}
+            {% include 'canvas.html' %}
+            {% include 'canvas_mobile.html' %}
+        </header>
+    </div>
+    <div id="rs-banner" class="rs-banner style2">
+        <div class="container">
+            <div class="content-part">
+                <span class="sub-text wow fadeInDown" data-wow-delay="2000ms" data-wow-duration="1500ms">Unique 
+                    Interior!</span>
+                <h2 class="title pb-28 wow fadeInLeft" data-wow-delay="2000ms" data-wow-duration="2500ms">Quality Design
+                </h2>
+                <p class="desc-part wow fadeInLeft" data-wow-delay="2500ms" data-wow-duration="3000ms">Lorem ipsum dolor
+                    sit amet, consectetur adipiscing elit.<br> Duis at dictum risus non.</p>
+                <ul class="btn-part mt-30">
+                    <li><a class="readon view wow fadeInLeft" data-wow-delay="3000ms" data-wow-duration="4000ms"
+                            href="contact.html">View Projects</a></li>
+                    <li><a class="readon view wow fadeInDown" data-wow-delay="2800ms" data-wow-duration="3500ms"
+                            href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% include 'slider.html' %}
+    {% include 'cards.html' %}
+
+    <footer id="rs-footer" class="rs-footer style1">
+        <div class="footer-top">
+            <div class="container-fluid2">
+                <div class="row">
+                    <div class="col-lg-3 col-md-12 col-sm-12 md-mb-10">
+                        <div class="footer-logo mb-40">
+                            <a href="index.html"><img src="" alt=""></a>
+                        </div>
+                        <ul class="footer-social md-mb-30">
+                            <li>
+                                <a href="#" target="_blank"><span><i class="fa fa-facebook"></i></span></a>
+                            </li>
+                            <li>
+                                <a href="#%20" target="_blank"><span><i class="fa fa-twitter"></i></span></a>
+                            </li>
+
+                            <li>
+                                <a href="#%20" target="_blank"><span><i class="fa fa-pinterest-p"></i></span></a>
+                            </li>
+                            <li>
+                                <a href="#%20" target="_blank"><span><i class="fa fa-instagram"></i></span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-sm-12 md-mb-10">
+                        <h3 class="footer-title">Contact Info</h3>
+                        <ul class="address-widget">
+                            <li>
+                                <i class="flaticon-location"></i>
+                                <div class="desc">503 Old Buffalo Street Northwest #205<br>
+                                    New York-3087</div>
+                            </li>
+                            <li>
+                                <i class="flaticon-call"></i>
+                                <div class="desc">
+                                    <a href="tel:(+880)15569569365">(+880)155 69569 365</a>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="flaticon-email"></i>
+                                <div class="desc">
+                                    <a href="mailto:support@rstheme.com">support@rstheme.com</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-sm-12 md-mb-10 pl-55 md-pl-15">
+                        <h3 class="footer-title">Menu</h3>
+                        <ul class="site-map">
+                            <li><a href="portfolio1.html">Portfolio</a></li>
+                            <li><a href="standard-style.html">Portfolio Single</a></li>
+                            <li><a href="team.html">Team</a></li>
+                            <li><a href="team-single.html">Team Single</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-sm-12">
+                        <h3 class="footer-title">Subscribe</h3>
+                        <p class="rs-view-btn">
+                            <input type="email" name="EMAIL" placeholder="Enter Your Email" required="">
+                            <span class="subscribebtn"><input type="submit" value="Subscribe Now"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="copyright text-center">
+                            <p>2021 All Rights Reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- start scrollUp  -->
+    <div id="scrollUp" class="orange-color">
+        <i class="fa fa-angle-up"></i>
+    </div>
+    <!-- End scrollUp  -->
+
+
+    <!-- Search Modal Start -->
+    <div class="modal fade search-modal" id="searchModal" tabindex="-1">
+        <button type="button" class="close" data-bs-dismiss="modal">
+            <span class="flaticon-cross"></span>
+        </button>
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="search-block clearfix">
+                    <form>
+                        <div class="form-group">
+                            <input class="form-control" placeholder="Search Here..." type="text">
+                            <button type="submit" value="Search"><i class="flaticon-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Search Modal End -->
+
+
+    {% endblock content %}
