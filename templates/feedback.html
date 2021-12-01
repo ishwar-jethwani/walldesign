@@ -25,6 +25,10 @@
     input {
         color: #08304b
     }
+    .feedback_name_{
+        width: 93%;
+        margin-left: 3%;
+    }
 </style>
 <!--Division for Modal-->
 <div id="myModal" class="modal fade" role="dialog">
@@ -44,6 +48,15 @@
                 <hr>
                 <h6>Your Rating</h6>
             </div> <!-- Radio Buttons for Rating-->
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <input type="text" name="name" class="form-control feedback_name_" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group">
+                    <input type="number" class="form-control feedback_name_" name="number" id="number" placeholder="Your Contact No."
+                        required>
+                </div>
+            </div>
             <div class="form-check mb-4"> <input name="feedback" type="radio"> <label class="ml-3">Very good</label>
             </div>
             <div class="form-check mb-4"> <input name="feedback" type="radio"> <label class="ml-3">Good</label> </div>
@@ -56,7 +69,8 @@
             <div class="text-center">
                 <h4>What could we improve?</h4>
                 <div class="form-group mt-3">
-                    <textarea class="form-control textarea-section" name="message" rows="5" placeholder="Message" required></textarea>
+                    <textarea class="form-control textarea-section" name="message" rows="5" placeholder="Message"
+                        required></textarea>
                 </div> <!-- Modal Footer-->
                 <div class="modal-footer"> <a href="" class="btn btn-primary">Send <i class="fa fa-paper-plane"></i>
                     </a> <a href="" class="btn btn-outline-primary" data-dismiss="modal">Cancel</a> </div>
