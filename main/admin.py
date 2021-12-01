@@ -1,3 +1,3 @@
 from django.contrib import admin
-
-# Register your models here.
+from .models import *
+admin.site.register[Header,ProjectImage,Category,Testimonial,ProjectImage,Product,Projects,Address,Feadback,Contact,Services]
