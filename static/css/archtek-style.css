@@ -2175,11 +2175,7 @@ body .search-modal .close:hover {
 /* ------------------------------------
     07. Banner Section CSS
 ---------------------------------------*/
-.rs-banner.style1 {
-  background-image: url(../images/banner-banner.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-}
+
 .rs-banner.style1 .content-part {
   padding: 320px 0 200px;
 }

@@ -6,6 +6,10 @@
         margin-top: 3%;
 
     }
+    .rs-banner.style1 {
+        background-repeat: no-repeat;
+        background-position: center;
+      }
 
 </style>
 
@@ -20,24 +24,25 @@
             {% include 'canvas_mobile.html' %}
         </header>
     </div>
-    <div id="rs-banner" class="rs-banner style2">
+    {% for head_content in headers %}
+    <div id="rs-banner" class="rs-banner style1" style="background-image: url('{{head_content.image}}');">
         <div class="container">
             <div class="content-part">
-                <span class="sub-text wow fadeInDown" data-wow-delay="2000ms" data-wow-duration="1500ms">Unique 
-                    Interior!</span>
-                <h2 class="title pb-28 wow fadeInLeft" data-wow-delay="2000ms" data-wow-duration="2500ms">Quality Design
+                <span class="sub-text wow fadeInDown" data-wow-delay="2000ms" data-wow-duration="1500ms">{{head_content.header_title_1}}</span>
+                <h2 class="title pb-28 wow fadeInLeft" data-wow-delay="2000ms" data-wow-duration="2500ms">{{head_content.header_title_2}}
                 </h2>
                 <p class="desc-part wow fadeInLeft" data-wow-delay="2500ms" data-wow-duration="3000ms">Lorem ipsum dolor
-                    sit amet, consectetur adipiscing elit.<br> Duis at dictum risus non.</p>
+                    {{ head_content.para }}</p>
                 <ul class="btn-part mt-30">
                     <li><a class="readon view wow fadeInLeft" data-wow-delay="3000ms" data-wow-duration="4000ms"
-                            href="contact.html">View Projects</a></li>
+                            href="#projects">View Projects</a></li>
                     <li><a class="readon view wow fadeInDown" data-wow-delay="2800ms" data-wow-duration="3500ms"
-                            href="contact.html">Contact Us</a></li>
+                            href="#contact">Contact Us</a></li>
                 </ul>
             </div>
         </div>
     </div>
+    {% endfor %}
     
     {% include 'slider_1.html' %}
     {% include 'slider_2.html' %}
@@ -105,7 +110,7 @@
                     <div class="col-lg-3 col-md-12 col-sm-12">
                         <h3 class="footer-title">Subscribe</h3>
                         <p class="rs-view-btn">
-                            <input type="email" name="EMAIL" placeholder="Enter Your Email" required="">
+                            <input type="email" name="sub_email" placeholder="Enter Your Email" required="">
                             <span class="subscribebtn"><input type="submit" value="Subscribe Now"></span>
                         </p>
                     </div>

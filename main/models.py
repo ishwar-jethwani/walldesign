@@ -17,6 +17,7 @@ class Header(models.Model):
         return self.name
 
 
+
 class ProductImage(models.Model):
     name            = models.CharField(max_length=20,verbose_name="name of image",blank=True)
     img             = models.ImageField(upload_to="product/",verbose_name="Product Image")
@@ -157,7 +158,13 @@ class Feadback(models.Model):
 
 
 
-
+class Subscribe(models.Model):
+    email = models.EmailField()
+    date = models.DateTimeField()
+    def __str__(self) -> str:
+        return self.email
+    class Meta:
+        ordering = ["-date"]
 
 
 
