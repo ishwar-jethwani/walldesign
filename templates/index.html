@@ -1,18 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 {% load static %}
-<style>
-    .col-md-6{
-        margin-top: 3%;
-
-    }
-    .rs-banner.style1 {
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-
-</style>
-
 
 <div class="offwrap"></div>
 <div class="main-content">
@@ -25,7 +13,7 @@
         </header>
     </div>
     {% for head_content in headers %}
-    <div id="rs-banner" class="rs-banner style1" style="background-image: url('{{head_content.image}}');">
+    <div id="rs-banner" class="rs-banner style2" style="background-image: url({{head_content.image.url}}); background-position:center;">
         <div class="container">
             <div class="content-part">
                 <span class="sub-text wow fadeInDown" data-wow-delay="2000ms" data-wow-duration="1500ms">{{head_content.header_title_1}}</span>

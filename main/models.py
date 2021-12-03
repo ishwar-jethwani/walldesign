@@ -5,7 +5,7 @@ from django.core.validators import RegexValidator
 
 class Header(models.Model):
     name            = models.CharField(max_length=20,verbose_name="name of header image")
-    image           = models.ImageField(upload_to="header/",verbose_name="Header Image")
+    image           = models.ImageField(verbose_name="Header Image")
     header_title_1  = models.CharField(max_length=100,verbose_name="Title on Header Page",blank=True)
     header_title_2  = models.CharField(max_length=100,verbose_name=" Big Title on Header Page",blank=True)
     para            = models.CharField(max_length=300,verbose_name="Paragraph on Header Page",blank=True)
@@ -20,7 +20,7 @@ class Header(models.Model):
 
 class ProductImage(models.Model):
     name            = models.CharField(max_length=20,verbose_name="name of image",blank=True)
-    img             = models.ImageField(upload_to="product/",verbose_name="Product Image")
+    img             = models.ImageField(verbose_name="Product Image")
     date_created    = models.DateTimeField(auto_now_add=True)
     class Meta:
         ordering = ["-date_created"]
@@ -29,7 +29,7 @@ class ProductImage(models.Model):
 
 class ProjectImage(models.Model):
     name            = models.CharField(max_length=20,verbose_name="name of image",blank=True)
-    img             = models.ImageField(upload_to="project/",verbose_name="Project Image")
+    img             = models.ImageField(verbose_name="Project Image")
     date_created    = models.DateTimeField(auto_now_add=True)
     class Meta:
         ordering = ["-date_created"]
@@ -80,10 +80,6 @@ class Projects(models.Model):
     
     class Meta:
         ordering = ['number']
-
-
-
-
 
 
 class Contact(models.Model):
