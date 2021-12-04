@@ -1,92 +1,33 @@
-
+{% for cat in  categories %}
     <div class="container text-center my-3">
-        <h2 class="font-weight-light">Our Outstanding Designs For Home Decoration</h2>
+        <h2 class="font-weight-light">{{cat.name}}</h2>
         <div class="row mx-auto my-auto">
-            <div id="Carousel_1" class="carousel slide w-100" data-ride="carousel">
+            <div id="Carousel_{{cat.id}}" class="carousel slide w-100" data-ride="carousel">
                 <div class="carousel-inner w-100" role="listbox">
                     <div class="carousel-item active">
                         <div class="col-md-4">
                             <div class="card card-body">
-                                <img class="img-fluid" src="https://mdbootstrap.com/img/new/standard/city/053.jpg">
+                                <img class="img-fluid" style="height: 225px;" src="https://i.picsum.photos/id/1068/7117/4090.jpg?hmac=Y6xHXrzHsNlbRTbhzZ53Yk-Ux9lUECBLbbP4wb5a1qY">
                             </div>
                         </div>
                     </div>
+                    {% for prod in products %}
+                    {% if prod.category.id == cat.id %}
                     <div class="carousel-item">
                         <div class="col-md-4">
                             <div class="card card-body">
-                                <img class="img-fluid" src="https://mdbootstrap.com/img/new/standard/city/053.jpg">
+                                <img class="img-fluid" style="height: 225px;" src="{{prod.img.img.url }}">
                             </div>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="col-md-4">
-                            <div class="card card-body">
-                                <img class="img-fluid" src="https://mdbootstrap.com/img/new/standard/city/053.jpg">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="col-md-4">
-                            <div class="card card-body">
-                                <img class="img-fluid" src="https://mdbootstrap.com/img/new/standard/city/053.jpg">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="col-md-4">
-                            <div class="card card-body">
-                                <img class="img-fluid" src="https://mdbootstrap.com/img/new/standard/city/053.jpg">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="col-md-4">
-                            <div class="card card-body">
-                                <img class="img-fluid" src="https://mdbootstrap.com/img/new/standard/city/053.jpg">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="col-md-4">
-                            <div class="card card-body">
-                                <img class="img-fluid" src="https://mdbootstrap.com/img/new/standard/city/053.jpg">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="col-md-4">
-                            <div class="card card-body">
-                                <img class="img-fluid" src="https://mdbootstrap.com/img/new/standard/city/053.jpg">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="col-md-4">
-                            <div class="card card-body">
-                                <img class="img-fluid" src="https://mdbootstrap.com/img/new/standard/city/053.jpg">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="col-md-4">
-                            <div class="card card-body">
-                                <img class="img-fluid" src="https://mdbootstrap.com/img/new/standard/city/053.jpg">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="col-md-4">
-                            <div class="card card-body">
-                                <img class="img-fluid" src="https://mdbootstrap.com/img/new/standard/city/053.jpg">
-                            </div>
-                        </div>
-                    </div>
+                    {% endif %}
+                    {% endfor %}
                 </div>
-                <a class="carousel-control-prev w-auto" href="#Carousel_1" role="button" data-slide="prev">
+                <a class="carousel-control-prev w-auto" href="#Carousel_{{cat.id}}" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next w-auto" href="#Carousel_1" role="button" data-slide="next">
+                <a class="carousel-control-next w-auto" href="#Carousel_{{cat.id}}" role="button" data-slide="next">
                     <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
@@ -94,7 +35,7 @@
         </div>
     </div>
     <script>
-        $('#Carousel_1').carousel({
+        $('#Carousel_{{cat.id}}').carousel({
             interval: 10000
           })
           
@@ -116,6 +57,4 @@
                 }
           });
     </script>
-</body>
-
-</html>
+{% endfor %}
