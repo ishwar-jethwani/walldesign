@@ -302,6 +302,7 @@
                 $grid.isotope({
                     filter: filterValue
                 });
+                console.log(filterValue)
             });
             var $grid = $('.grid').isotope({
                 itemSelector: '.grid-item',
