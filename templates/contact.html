@@ -1,3 +1,4 @@
+
 <section id="contact" class="contact section-bg">
     <div class="container">
 
@@ -6,34 +7,38 @@
         </div>
 
         <div class="row">
-
+            {% for addr in address %}
             <div class="col-lg-4">
                 <div class="info d-flex flex-column justify-content-center" data-aos="fade-right">
                     <div class="address">
                         <i class="bi bi-geo-alt"></i>
                         <h4>Location:</h4>
-                        <p>A108 Adam Street,<br>New York, NY 535022</p>
+                        <p>{{ addr.location_line_1 }}<br>{{ addr.location_line_2 }}<br>{{addr.location_line_3}}</p>
                     </div>
 
                     <div class="email">
                         <i class="bi bi-envelope"></i>
                         <h4>Email:</h4>
-                        <p>info@example.com</p>
+                        <p>{{addr.email}}</p>
                     </div>
 
                     <div class="phone">
                         <i class="bi bi-phone"></i>
                         <h4>Call:</h4>
-                        <p>+1 5589 55488 55s</p>
+                        <p>{{addr.mobile_number}}</p>
                     </div>
 
                 </div>
+                
 
             </div>
+            {% endfor %}
+
 
             <div class="col-lg-8 mt-5 mt-lg-0">
 
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form" data-aos="fade-left">
+                <form action="{% url 'contact' %}" method="POST" role="form" class="php-email-form" data-aos="fade-left">
+                    {% csrf_token %}
                     <div class="row">
                         <div class="col-md-6 form-group">
                             <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"

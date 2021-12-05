@@ -135,16 +135,9 @@ class Testimonial(models.Model):
 
 
 class Feadback(models.Model):
-    feedback_touple = (
-        ("Very good","Very good"),
-        ("Good","Good"),
-        ("Mediocre","Mediocre"),
-        ("Bad","Bad"),
-        ("Very Bad","Very Bad")
-        )
     name = models.CharField(max_length=50,verbose_name="Name")
     contact_no = PhoneNumberField(validators=[RegexValidator(r'^\d{3}-\d{3}-\d{4}$')])
-    feedback = models.CharField(max_length=100,choices=feedback_touple,verbose_name="Feedback")
+    feedback = models.CharField(max_length=100,verbose_name="Feedback")
     messgae = RichTextField(blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
     class Meta:
@@ -156,7 +149,7 @@ class Feadback(models.Model):
 
 class Subscribe(models.Model):
     email = models.EmailField()
-    date = models.DateTimeField()
+    date = models.DateTimeField(auto_now_add=True)
     def __str__(self) -> str:
         return self.email
     class Meta:
