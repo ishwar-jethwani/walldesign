@@ -101,7 +101,7 @@
                     </div>
                     <div class="col-lg-3 col-md-12 col-sm-12">
                         <h3 class="footer-title">Subscribe</h3>
-                        <form action="." method="POST">
+                        <form action="{% url 'subscribe' %}" method="POST">
                             {% csrf_token %}
                             <p class="rs-view-btn">
                                 <input type="email" name="sub_email" placeholder="Enter Your Email" required="">

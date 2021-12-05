@@ -14,6 +14,10 @@ def home(request):
         "products":Product.objects.all()[1:]
 
     }
+
+    return render(request,"index.html",context)
+
+def subscription(request):
     if request.method == "POST":
         email = request.POST.get("sub_email")
         created = Subscribe.objects.create(
@@ -21,8 +25,9 @@ def home(request):
         )
         if created:
             messages.success(request,"Thank You For Subcription")
-
-    return render(request,"index.html",context)
+            return redirect("home")
+    return redirect("home")
+        
 
 def feedback_form(request):
     if request.method == "POST":
