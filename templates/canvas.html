@@ -1,7 +1,7 @@
 {% load static %}
 <nav class="right_menu_togle hidden-md">
     <div class="close-btn">
-        <a id="nav-close" class="nav-close" href="archtek.html">
+        <a id="nav-close" class="nav-close" href="#">
             <div class="line">
                 <span class="line1"></span>
                 <span class="line2"></span>
@@ -9,7 +9,7 @@
         </a>
     </div>
     <div class="canvas-logo">
-        <a href="index.html"><img src="" alt="logo"></a>
+        <a href="#"><img src="" alt="logo"></a>
     </div>
     <div class="offcanvas-text">
         <p>We denounce with righteous indig nation in and dislike men who are so beguiled and to demo realized, that they data forest see best business consulting wordpress theme 2021.</p>
@@ -18,6 +18,7 @@
         <img src="" alt="Images">
     </div>
     <div class="canvas-contact">
+        {% for addr in address %}
         <div class="address-area">
             <div class="address-list">
                 <div class="info-icon">
@@ -25,7 +26,7 @@
                 </div>
                 <div class="info-content">
                     <h4 class="title">Address</h4>
-                    <em>05 kandi BR. New York</em>
+                    <em>{{ addr.location_line_1 }}<br>{{ addr.location_line_2 }}<br>{{addr.location_line_3}}</em>
                 </div>
             </div>
             <div class="address-list">
@@ -34,7 +35,7 @@
                 </div>
                 <div class="info-content">
                     <h4 class="title">Email</h4>
-                    <em><a href="mailto:support@rstheme.com">support@rstheme.com</a></em>
+                    <em><a href="mailto:{{addr.email}}">{{addr.email}}</a></em>
                 </div>
              </div>
             <div class="address-list">
@@ -43,10 +44,11 @@
                 </div>
                 <div class="info-content">
                   <h4 class="title">Phone</h4>
-                  <em>+019988772</em>
+                  <em>{{addr.mobile_number}}</em>
                 </div>
             </div>
         </div>
+        {% endfor %}
         <ul class="social">
             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
             <li><a href="#"><i class="fa fa-twitter"></i></a></li>

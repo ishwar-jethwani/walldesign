@@ -10,31 +10,34 @@
                         </a>
                     </div>
                 </div>
+                {% for addr in address %}
                 <div class="col-cell">
                     <ul class="rs-contact-info">
                         <li class="contact-part">
                             <i class="flaticon-email"></i>
                             <span class="contact-info">
                                 <span>E-mail</span>
-                                <a href="mailto:support@rstheme.com">support@gmail.com</a>
+                                <a href="mailto:{{addr.email}}">{{addr.email}}</a>
                             </span>
                         </li>
                         <li class="contact-part">
                             <i class="flaticon-call"></i>
                             <span class="contact-info">
                                 <span>Call Us Now</span>
-                                <a href="tel:+(+01)555-555-4444"> (+01) 555 - 555 - 4444</a>
+                                <a href="tel:{{addr.mobile_number}}">{{addr.mobile_number}}</a>
                             </span>
                         </li>
                         <li class="contact-part no-border">
                             <i class="flaticon-location"></i>
                             <span class="contact-info">
-                                <span>110,old Street</span>
-                                Old Traford, England   
+                                <span>{{addre.location_line_1}}</span>
+                                <span>{{ addr.location_line_2 }}</span>
+                                {{addr.location_line_3}}   
                             </span>
                         </li>
                     </ul>
                 </div>
+                {% endfor %}
                 <div class="col-cell">
                     <div class="expand-btn-inner">                                       
                         <ul>
@@ -61,12 +64,11 @@
                         <div class="main-menu">
                            <nav class="rs-menu hidden-md">
                                <ul class="nav-menu onepage-menu">
-                                   <li class="current-menu-item"><a href="#rs-header">Home</a></li>
-                                   <li><a href="#rs-about">About</a> </li>
-                                   <li><a href="#rs-services">Services</a> </li>
-                                   <li><a href="#rs-team">Team</a> </li>
-                                   <li><a href="#rs-blog">Blog</a> </li>
-                                   <li><a href="#rs-contact">Contact</a> </li>
+                                   <li class="current-menu-item"><a href="#">Home</a></li>
+                                   <li><a href="#">Products</a> </li>
+                                   <li><a href="#">Projects</a> </li>
+                                   <li><a href="#">Testimonials</a> </li>
+                                   <li><a href="#">Contact</a> </li>
                                </ul> <!-- //.nav-menu -->
                            </nav>
 
