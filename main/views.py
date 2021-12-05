@@ -10,7 +10,6 @@ def home(request):
         "projects": Projects.objects.all(),
         "testimonials":Testimonial.objects.all(),
         "address":Address.objects.all()[:1],
-        "product_first":Product.objects.all()[:1],
         "products":Product.objects.all()[1:]
 
     }

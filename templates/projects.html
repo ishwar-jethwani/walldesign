@@ -11,8 +11,8 @@
         <div class="col-lg-12 d-flex justify-content-center">
           <ul id="portfolio-flters">
             <li data-filter="*" class="filter-active">All</li>
-            {% for cat in categories %}
-            <li data-filter=".filter-{{ cat.name }}">{{ cat.name }}</li>
+            {% for proj in projects %}
+            <li data-filter=".filter-{{ proj.filer_tag }}">{{ proj.filer_tag }}</li>
             {% endfor %}
           </ul>
         </div>
@@ -21,7 +21,7 @@
 
       <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
         {% for proj in projects %}
-        <div class="col-lg-4 col-md-6 portfolio-item filter-{{proj.category.name}}">
+        <div class="col-lg-4 col-md-6 portfolio-item filter-{{ proj.filer_tag }}">
           <div class="portfolio-wrap">
             <img src="{{ proj.img.img.url }}" class="img-fluid" alt="">
             <div class="portfolio-info">
