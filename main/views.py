@@ -32,7 +32,7 @@ def subscription(request):
 def feedback_form(request):
     if request.method == "POST":
         name = request.POST.get("name")
-        phone = request.POST.get("mobile")
+        phone = "+91"+request.POST.get("mobile")
         feedback = request.POST.get("feedback")
         message = request.POST.get("message")
         create  = Feadback.objects.create(
@@ -50,7 +50,7 @@ def contact(request):
     if request.method == "POST":
         name = request.POST.get("name")
         email = request.POST.get("email")
-        phone = request.POST.get("mobile")
+        phone = "91"+request.POST.get("mobile")
         subject = request.POST.get("subject")
         message = request.POST.get("message")
         Contact.objects.create(

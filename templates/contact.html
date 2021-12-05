@@ -36,7 +36,7 @@
 
             <div class="col-lg-8 mt-5 mt-lg-0">
 
-                <form action="." method="POST" role="form" class="php-email-form"
+                <form method="POST" action="{% url 'contact' %}" role="form" class="php-email-form"
                     data-aos="fade-left">
                     {% csrf_token %}
                     <div class="row">

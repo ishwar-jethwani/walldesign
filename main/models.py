@@ -138,7 +138,7 @@ class Feadback(models.Model):
     name = models.CharField(max_length=50,verbose_name="Name")
     contact_no = PhoneNumberField(validators=[RegexValidator(r'^\d{3}-\d{3}-\d{4}$')])
     feedback = models.CharField(max_length=100,verbose_name="Feedback")
-    messgae = RichTextField(blank=True)
+    message = RichTextField(blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
     class Meta:
         ordering = ["-date_created"]
