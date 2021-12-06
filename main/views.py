@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.shortcuts import redirect, render
 from .models import *
 from django.core.mail import send_mail
+from django.views.generic.detail import DetailView
 
 def home(request):
     context = {
@@ -20,8 +21,12 @@ def home(request):
     return render(request,"index.html",context)
 
 
-# def detail(request):
-#     return render(request,"product_detail.html")
+def project_detail(request,pk):
+    data = Projects.objects.get(id=pk)
+    return render(request,"projects-details.html",{"data":data})
+def product_detail(request,pk):
+    data = Product.objects.get(id=pk)
+    return render(request,"product-details.html",{"data":data})
 
 def subscription(request):
     if request.method == "POST":

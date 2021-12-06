@@ -29,7 +29,7 @@
               <p>{{ proj.disc|safe }}</p>
               <div class="portfolio-links">
                 <a href="{{ proj.img.img.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
+                <a href="{% url 'project_detail' proj.id %}" title="More Details"><i class="bx bx-link"></i></a> -->
               </div>
             </div>
           </div>

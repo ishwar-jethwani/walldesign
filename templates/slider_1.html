@@ -17,7 +17,7 @@
                     <div class="carousel-item">
                         <div class="col-md-4">
                             <div class="card card-body">
-                                <img class="img-fluid" style="height: 225px;" src="{{prod.img.img.url }}">
+                                <a href="{% url 'product_detail' prod.id %}"><img class="img-fluid" style="height: 225px;" src="{{prod.img.img.url }}"></a>
                             </div>
                         </div>
                     </div>

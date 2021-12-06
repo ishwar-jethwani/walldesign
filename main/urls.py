@@ -15,6 +15,7 @@ urlpatterns = [
     path("contact/",contact,name="contact"),
     path('sitemap.xml/',sitemap,{'sitemaps':sitemaps}),
     path("robots.txt",TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
-    # path("detail/",detail,name="detail")
+    path("product_detail/<str:pk>/",product_detail,name="product_detail"),
+    path("project_detail/<str:pk>/",project_detail,name="project_detail")
 
 ]

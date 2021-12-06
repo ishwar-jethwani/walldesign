@@ -1,3 +1,4 @@
+from django.urls import reverse
 from django.db import models
 from ckeditor.fields import RichTextField
 from phonenumber_field.modelfields import PhoneNumberField
@@ -77,6 +78,9 @@ class Projects(models.Model):
     
     def __str__(self):
         return self.project_name
+    
+    def get_absolute_url(self):
+        return reverse('detail', args=[str(self.id)])
     
     class Meta:
         ordering = ['number']
