@@ -12,7 +12,7 @@ def home(request):
         "address":Address.objects.all()[:1],
         "products":Product.objects.all()[1:],
         "social": SocialMedia.objects.all(),
-        "logo":Logo.objects.all[:1],
+        "logo":Logo.objects.all()[:1],
         "about":About.objects.all()[:1]
 
     }
