@@ -19,6 +19,10 @@ def home(request):
 
     return render(request,"index.html",context)
 
+
+# def detail(request):
+#     return render(request,"product_detail.html")
+
 def subscription(request):
     if request.method == "POST":
         email = request.POST.get("sub_email")
