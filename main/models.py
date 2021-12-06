@@ -156,7 +156,34 @@ class Subscribe(models.Model):
         ordering = ["-date"]
 
 
+class SocialMedia(models.Model):
+    name = models.CharField(max_length=50,verbose_name="Name Of Social Media Plateform",blank=True)
+    url = models.URLField(verbose_name="Link Of Profile")
+    date_created = models.DateTimeField(auto_now_add=True)
+    class Meta:
+        ordering = ["-date_created"]
+    def __str__(self) -> str:
+        return self.name
 
+
+class Logo(models.Model):
+    link = models.URLField(verbose_name="Redirection Link")
+    logo = models.ImageField(verbose_name="logo")
+    date_created = models.DateTimeField(auto_now_add=True)
+    class Meta:
+        ordering = ["-date_created"]
+    def __str__(self) -> str:
+        return self.id
+
+    
+class About(models.Model):
+    desc = RichTextField(verbose_name="About Us")
+    img = models.ImageField(verbose_name="Intro Image")
+    date_created = models.DateTimeField(auto_now_add=True)
+    class Meta:
+        ordering = ["-date_created"]
+    def __str__(self) -> str:
+        return self.id
 
 
 

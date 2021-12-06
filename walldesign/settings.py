@@ -44,7 +44,10 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'storages',
     'ckeditor',
+    'django.contrib.sitemaps',
 ]
+PHONENUMBER_DB_FORMAT = 'NATIONAL'
+PHONENUMBER_DEFAULT_REGION = 'IN'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
