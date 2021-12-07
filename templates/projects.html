@@ -23,12 +23,12 @@
         {% for proj in projects %}
         <div class="col-lg-4 col-md-6 portfolio-item filter-{{ proj.filer_tag }}">
           <div class="portfolio-wrap">
-            <img src="{{ proj.img.img.url }}" class="img-fluid" alt="">
+            <img src="{{ proj.img.url }}" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>{{ proj.project_name }}</h4>
               <p>{{ proj.disc|safe }}</p>
               <div class="portfolio-links">
-                <a href="{{ proj.img.img.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                <a href="{{ proj.img.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
                 <a href="{% url 'project_detail' proj.id %}" title="More Details"><i class="bx bx-link"></i></a> -->
               </div>
             </div>

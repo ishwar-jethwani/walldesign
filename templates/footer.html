@@ -1,0 +1,82 @@
+<footer id="rs-footer" class="rs-footer style1">
+    <div class="footer-top">
+        <div class="container-fluid2">
+            <div class="row">
+                <div class="col-lg-3 col-md-12 col-sm-12 md-mb-10">
+                    <div class="footer-logo mb-40">
+                        <a href="{% url 'home' %}"><img src="" alt=""></a>
+                    </div>
+                    <ul class="footer-social md-mb-30">
+                        <li>
+                            <a href="#" target="_blank"><span><i class="fa fa-facebook"></i></span></a>
+                        </li>
+                        <li>
+                            <a href="#%20" target="_blank"><span><i class="fa fa-twitter"></i></span></a>
+                        </li>
+
+                        <li>
+                            <a href="#%20" target="_blank"><span><i class="fa fa-pinterest-p"></i></span></a>
+                        </li>
+                        <li>
+                            <a href="#%20" target="_blank"><span><i class="fa fa-instagram"></i></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-12 col-sm-12 md-mb-10">
+                    <h3 class="footer-title">Contact Info</h3>
+                    {% for addr in address %}
+                    <ul class="address-widget">
+                        <li>
+                            <i class="flaticon-location"></i>
+                            <div class="desc">{{ addr.location_line_1 }}<br>{{ addr.location_line_2}}<br>{{addr.location_line_3}}</div>
+                        </li>
+                        <li>
+                            <i class="flaticon-call"></i>
+                            <div class="desc">
+                                <a href="tel:{{addr.mobile_number}}">{{addr.mobile_number}}</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="flaticon-email"></i>
+                            <div class="desc">
+                                <a href="mailto:{{addr.email}}">{{addr.email}}</a>
+                            </div>
+                        </li>
+                    </ul>
+                    {% endfor %}
+                </div>
+                <div class="col-lg-3 col-md-12 col-sm-12 md-mb-10 pl-55 md-pl-15">
+                    <h3 class="footer-title">Menu</h3>
+                    <ul class="site-map">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'home' %}#products">Products</a></li>
+                        <li><a href="{% url 'home' %}#projects">Projects</a></li>
+                        <li><a href="{% url 'home' %}#projects">Testimonials</a></li>
+                        <li><a href="{% url 'home' %}#contact">Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-12 col-sm-12">
+                    <h3 class="footer-title">Subscribe</h3>
+                    <form action="{% url 'subscribe' %}" method="POST">
+                        {% csrf_token %}
+                        <p class="rs-view-btn">
+                            <input type="email" name="sub_email" placeholder="Enter Your Email" required="">
+                            <span class="subscribebtn"><input type="submit" value="Subscribe Now"></span>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="copyright text-center">
+                        <p>2021 All Rights Reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

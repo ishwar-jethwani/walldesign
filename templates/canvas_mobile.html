@@ -9,18 +9,18 @@
     </div>
     <ul class="nav-menu">
         <li class="menu-item-has-children current-menu-item">
-            <a href="#">Home</a>
+            <a href="{% url 'home' %}">Home</a>
         <li class="menu-item-has-children">
-            <a href="#products">Products</a>
+            <a href="{% url 'home' %}#products">Products</a>
         </li>
         <li class="menu-item-has-children">
-            <a href="#projects">Projects</a>
+            <a href="{% url 'home' %}#projects">Projects</a>
         </li>
         <li class="menu-item-has-children">
-            <a href="#testimonials">Testimonials</a>
+            <a href="{% url 'home' %}#testimonials">Testimonials</a>
         </li>
         <li>
-            <a href="#contact">Contact</a>
+            <a href="{% url 'home' %}#contact">Contact</a>
         </li>
     </ul> <!-- //.nav-menu -->
     <div class="canvas-contact">

@@ -11,7 +11,7 @@ def home(request):
         "projects": Projects.objects.all(),
         "testimonials":Testimonial.objects.all(),
         "address":Address.objects.all()[:1],
-        "products":Product.objects.all()[1:],
+        "products":Product.objects.all(),
         "social": SocialMedia.objects.all(),
         "logo":Logo.objects.all()[:1],
         "about":About.objects.all()[:1]
@@ -22,10 +22,10 @@ def home(request):
 
 
 def project_detail(request,pk):
-    data = Projects.objects.get(id=pk)
+    data = ProjectImage.objects.filter(project__id=pk)
     return render(request,"projects-details.html",{"data":data})
 def product_detail(request,pk):
-    data = Product.objects.get(id=pk)
+    data = ProductImage.objects.filter(product__id=pk)
     return render(request,"product-details.html",{"data":data})
 
 def subscription(request):

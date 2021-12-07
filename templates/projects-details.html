@@ -1,36 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-{% load static %}
+{% extends 'base2.html' %}
+{% block content %}
+<div class="offwrap"></div>
+<div class="main-content">
+    <div class="full-width-header">
+        <header id="rs-header" class="rs-header home3-header-style1">
+            {% include 'menu.html' %}
+            {% include 'canvas.html' %}
+            {% include 'canvas_mobile.html' %}
+        </header>
+    </div>
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Portfolio Details - Sailor Bootstrap Template</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="{% static 'details/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
-  <link href="{% static 'details/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="{% static 'details/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
-  <link href="{% static 'details/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
-  <link href="{% static 'details/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
-  <link href="{% static 'details/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
-  <link href="{% static 'details/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="{% static 'details/css/style.css' %}" rel="stylesheet">
-
-</head>
-
-<body>
-
-  <main id="main">
+  <main id="main" style="margin-top:10%;">
 
     <!-- ======= Portfolio Details Section ======= -->
     <section id="portfolio-details" class="portfolio-details">
@@ -41,10 +21,11 @@
           <div class="col-lg-8">
             <div class="portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
-
+                {% for img in data %}
                 <div class="swiper-slide">
-                  <img src="{{ data.img.img.url }} " alt="">
+                  <img src="{{ img.img.url }} " alt="">
                 </div>
+                {% endfor %}
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -54,16 +35,12 @@
             <div class="portfolio-info">
               <h3>Project information</h3>
               <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+                <li><strong>Category</strong>: {{ data.category }}</li>
               </ul>
             </div>
             <div class="portfolio-description">
-              <h2>This is an example of portfolio detail</h2>
               <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                {{ data.disc|safe}}
               </p>
             </div>
           </div>
@@ -77,17 +54,4 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="{% static 'details/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'details/vendor/glightbox/js/glightbox.min.js' %}"></script>
-  <script src="{% static 'details/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-  <script src="{% static 'details/vendor/swiper/swiper-bundle.min.js' %}"></script>
-  <script src="{% static 'details/vendor/waypoints/noframework.waypoints.js' %}"></script>
-  <script src="{% static 'details/vendor/php-email-form/validate.js' %}"></script>
-
-  <!-- Template Main JS File -->
-  <script src="{% static 'details/js/main.js' %}"></script>
-
-</body>
-
-</html>
+{% endblock content %}

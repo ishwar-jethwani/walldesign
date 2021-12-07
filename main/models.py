@@ -17,27 +17,6 @@ class Header(models.Model):
     def __str__(self) -> str:
         return self.name
 
-
-
-class ProductImage(models.Model):
-    name            = models.CharField(max_length=20,verbose_name="name of image",blank=True)
-    img             = models.ImageField(verbose_name="Product Image")
-    date_created    = models.DateTimeField(auto_now_add=True)
-    class Meta:
-        ordering = ["-date_created"]
-    def __str__(self) -> str:
-        return self.name
-
-class ProjectImage(models.Model):
-    name            = models.CharField(max_length=20,verbose_name="name of image",blank=True)
-    img             = models.ImageField(verbose_name="Project Image")
-    date_created    = models.DateTimeField(auto_now_add=True)
-    class Meta:
-        ordering = ["-date_created"]
-    def __str__(self) -> str:
-        return self.name
-
-
 class Category(models.Model):
     name    = models.CharField(max_length=200)
     slug    = models.SlugField(null=True)
@@ -57,7 +36,7 @@ class Category(models.Model):
 
 class Product(models.Model):
     name            = models.CharField(max_length=100,verbose_name="Name of Product")
-    img             = models.ForeignKey(ProductImage,on_delete=models.CASCADE)
+    img             = models.ImageField(verbose_name="First Image")
     disc            = RichTextField(verbose_name="Decription")
     category        = models.ForeignKey(Category,on_delete=models.CASCADE)
     date_created    = models.DateTimeField(auto_now_add=True)
@@ -70,7 +49,7 @@ class Product(models.Model):
 class Projects(models.Model):
     number          = models.PositiveIntegerField()
     project_name    = models.CharField(max_length=200,verbose_name="Project Name")
-    img             = models.ForeignKey(ProjectImage,on_delete=models.CASCADE)
+    img             = models.ImageField(verbose_name="First Image")
     disc            = RichTextField(verbose_name="Decription")
     category        = models.ForeignKey(Category,on_delete=models.CASCADE)
     filer_tag       = models.CharField(max_length=10,verbose_name="Filter Tag")
@@ -79,11 +58,30 @@ class Projects(models.Model):
     def __str__(self):
         return self.project_name
     
-    def get_absolute_url(self):
-        return reverse('detail', args=[str(self.id)])
     
     class Meta:
         ordering = ['number']
+
+
+class ProductImage(models.Model):
+    name            = models.CharField(max_length=20,verbose_name="name of image",blank=True)
+    img             = models.ImageField(verbose_name="Product Image")
+    product         = models.ForeignKey(Product,on_delete=models.CASCADE)
+    date_created    = models.DateTimeField(auto_now_add=True)
+    class Meta:
+        ordering = ["-date_created"]
+    def __str__(self) -> str:
+        return self.name
+
+class ProjectImage(models.Model):
+    name            = models.CharField(max_length=20,verbose_name="name of image",blank=True)
+    img             = models.ImageField(verbose_name="Project Image")
+    project         = models.ForeignKey(Projects,on_delete=models.CASCADE)
+    date_created    = models.DateTimeField(auto_now_add=True)
+    class Meta:
+        ordering = ["-date_created"]
+    def __str__(self) -> str:
+        return self.name
 
 
 class Contact(models.Model):
@@ -188,6 +186,7 @@ class About(models.Model):
         ordering = ["-date_created"]
     def __str__(self) -> str:
         return self.id
+
 
 
 
